@@ -34,7 +34,13 @@ export default class Main extends Component {
     }
 
     solveClick(){
-        this.setState({sudokuPrint: SolveSudoku(this.state.game)});
+        var result = SolveSudoku(this.state.game);
+        if(result != false){
+            this.setState({sudokuPrint: result});
+        }
+        else{
+            console.log("I need to learn more Sudoku ^_^'");
+        }
     }
 
     openMenu(){

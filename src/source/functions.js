@@ -14,9 +14,15 @@ export function MatrixToArray(matrix){
 
 export function SudokuToArray(sudoku){
     var printArray = [];
+    // for(var row = 0; row < sudoku.length; row++){
+    //     for(var col = 0; col < sudoku[row].length; col++){
+    //         printArray.push(sudoku[row][col].value);
+    //     }
+    // }
+
     for(var row = 0; row < sudoku.length; row++){
         for(var col = 0; col < sudoku[row].length; col++){
-            printArray.push(sudoku[row][col].value);
+            printArray.push(sudoku[row][col]);
         }
     }
 
@@ -46,18 +52,14 @@ export function PrepareSudoku(sudoku){
 export function SolveSudoku(sudoku){
     var solution = PrepareSudoku(sudoku);
     
-    //Solution
-    //Used to check if its possible to find a solution
-    // var firstEmptyCel = {row: "", col: ""};
-    
-    var cont = 0;
+    var loopCounter = 0;
     var isForward = true;
 
     for(var row = 0; row < solution.length; row++){
         for(var col = 0; col < solution[row].length; col++){
 
-            if(cont < 729000) cont++; 
-            else return sudoku;
+            if(loopCounter < 9990000) loopCounter++; 
+            else return false;
 
             if(solution[row][col].isFix == true){
                 // Go to the next cell
@@ -73,12 +75,6 @@ export function SolveSudoku(sudoku){
             }
             else{
                 if(solution[row][col].value == ""){
-
-                    // if(firstEmptyCel.row == ""){
-                    //     firstEmptyCel.row = row;
-                    //     firstEmptyCel.col = col; 
-                    // }
-
                     solution[row][col].value = 1;
                     isForward = true;
                 }
@@ -88,8 +84,6 @@ export function SolveSudoku(sudoku){
                 }
                 else{
                     solution[row][col].value = "";
-
-                    // if(firstEmptyCel.row != row && firstEmptyCel.col != col){
                         if(col > 0){
                             col = col-2;
                         }
@@ -98,11 +92,6 @@ export function SolveSudoku(sudoku){
                             row--;
                         }
                         isForward = false;
-                    // }
-                    // else{
-                    //     console.log("Sorry, I need to learn more Sudoku ^_^'"); 
-                    //     return;
-                    // } 
                 }
 
                 //validation here

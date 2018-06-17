@@ -20,11 +20,23 @@ export default class SudokuGrid extends Component {
 }
 
 function renderItem(item) {
-	return (
-		<View style={Styles.item}>
-			<View style={Styles.content}>
-				<Text style={Styles.text}>{item}</Text>
-			</View>
-		</View>
-	);
+
+    if(item.value){
+        return (
+            <View style={Styles.item}>
+                <View style={Styles.content}>
+                    <Text style={Styles.text}>{item.value}</Text>
+                </View>
+            </View>
+        );
+    }
+    else{
+        return (
+            <View style={Styles.item}>
+                <View style={Styles.content}>
+                    <Text style={Styles.text}>{item}</Text>
+                </View>
+            </View>
+        );
+    }
 }

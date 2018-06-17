@@ -1,22 +1,33 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import Main from './src/view/Main';
-
 export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Main /> 
-      </View>
-    );
+
+  constructor(){
+    super();
+    this.state= {
+      isReady: false
+    };
   }
+
+  async componentWillMount() {
+    try{
+      await Expo.Font.loadAsync({
+          Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf")
+      });
+
+      this.setState({ isReady: true });
+    }
+    catch(error){
+      console.log("error loading App:", error);
+    }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  render() {
+    if(!this.state.isReady){
+      return <Expo.AppLoading />
+    }
+    else{
+      return <Main />; 
+    }
+  }
+}
