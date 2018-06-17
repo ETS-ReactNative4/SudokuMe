@@ -33,19 +33,28 @@ module.exports = {
         marginBottom: -10
     },
 
-    button: {
+    buttonSolve: {
         color: secondColor,
         fontSize: 25,
     },
 
+    buttonSave: {
+        color: "red",
+        fontSize: 25,
+    },
+ 
     mainContainer: {
         height: Dimensions.get('window').height,
         width: Dimensions.get('window').width,
     },
 
-
+    mainView:{
+        height: Dimensions.get('window').width,
+    },
+ 
     menuContainer: {
         height: Dimensions.get('window').height,
+        backgroundColor: thirdColor,
     },
 
     //Grid
@@ -65,9 +74,5 @@ module.exports = {
     newValue: {
         color: mainColor,
         fontSize: 26,
-    },
-    
-    mainView:{
-        height: Dimensions.get('window').width,
     }
-};
+}

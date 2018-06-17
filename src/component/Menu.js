@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import { List, ListItem, Icon } from 'react-native-elements';
+import { List, ListItem, Icon, Divider } from 'react-native-elements';
 
 var Styles = require('../resources/styles.js');
 
@@ -73,6 +73,21 @@ export default class Menu extends Component {
                             />
                         }
                         onPress={()=>this.props.newGame("hard")}
+                        hideChevron={true}
+                    />
+
+                    <Divider style={{ backgroundColor: 'black' }} />
+
+                    <ListItem
+                        key={5}
+                        title="Create Game"
+                        leftIcon={
+                            <Icon
+                                name='arrow-forward'
+                                color='blue' 
+                            />
+                        }
+                        onPress={this.props.createGame}
                         hideChevron={true}
                     />
 

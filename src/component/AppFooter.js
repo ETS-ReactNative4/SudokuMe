@@ -6,14 +6,26 @@ var Styles = require('../resources/styles.js');
 export default class AppFooter extends Component {
 
     render(){
-        return(
+        if(this.props.editMode){
+            return(
                 <Button large
-                    onPress={this.props.solveClick}
-                    title="Sudoku Me!"
-                    backgroundColor={Styles.button.color}
-                    fontSize={Styles.button.fontSize}
+                    onPress={this.props.saveGame}
+                    title="Save"
+                    backgroundColor={Styles.buttonSave.color}
+                    fontSize={Styles.buttonSave.fontSize}
                 />
-        );
+            );
+        }
+        else{
+            return(
+                    <Button large
+                        onPress={this.props.solveClick}
+                        title="Sudoku Me!"
+                        backgroundColor={Styles.buttonSolve.color}
+                        fontSize={Styles.buttonSave.fontSize}
+                    />
+            );
+        }
     }
 
 }

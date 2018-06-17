@@ -14,18 +14,11 @@ export function MatrixToArray(matrix){
 
 export function SudokuToArray(sudoku){
     var printArray = [];
-    // for(var row = 0; row < sudoku.length; row++){
-    //     for(var col = 0; col < sudoku[row].length; col++){
-    //         printArray.push(sudoku[row][col].value);
-    //     }
-    // }
-
     for(var row = 0; row < sudoku.length; row++){
         for(var col = 0; col < sudoku[row].length; col++){
             printArray.push(sudoku[row][col]);
         }
     }
-
     return printArray
 }
 

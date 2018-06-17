@@ -23,7 +23,8 @@ export default class Main extends Component {
         this.state = { 
             game: Games.medium[0],
             sudokuPrint: MatrixToArray(Games.medium[0]),
-            menuOpen: false
+            menuOpen: false,
+            editMode: false,
         }
 
         this.solveClick = this.solveClick.bind(this);
@@ -31,6 +32,8 @@ export default class Main extends Component {
         this.closeMenu = this.closeMenu.bind(this);
         this.restart = this.restart.bind(this);
         this.newGame = this.newGame.bind(this);
+        this.createGame = this.createGame.bind(this);
+        this.saveGame = this.saveGame.bind(this);
     }
 
     solveClick(){
@@ -64,8 +67,23 @@ export default class Main extends Component {
         this.setState({
             game: game,
             sudokuPrint: MatrixToArray(game),
-            menuOpen: false
+            menuOpen: false,
+            editMode: false,
         })
+    }
+
+    createGame(){
+        this.setState({
+            sudokuPrint: MatrixToArray(Games.clear),
+            editMode: true,
+            menuOpen: false
+        });
+    }
+
+    saveGame(){
+        this.setState({
+            editMode: false
+        });
     }
 
     render() {
@@ -77,7 +95,8 @@ export default class Main extends Component {
                     content={ 
                         <Menu closeMenu={this.closeMenu} 
                             restart={this.restart}
-                            newGame={this.newGame}    
+                            newGame={this.newGame} 
+                            createGame={this.createGame} 
                         /> 
                     }
                     type="overlay"
@@ -87,7 +106,9 @@ export default class Main extends Component {
 
                     <AppHeader openMenu={this.openMenu}/>
                     <SudokuGrid sudoku={this.state.sudokuPrint} />
-                    <AppFooter solveClick={this.solveClick} />
+                    <AppFooter solveClick={this.solveClick} 
+                        saveGame={this.saveGame}
+                        editMode={this.state.editMode}/>
 
                 </Drawer>
             </View>
