@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-
+import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
 import Drawer from 'react-native-drawer';
-
-
 import AppHeader from '../component/AppHeader';
 import AppFooter from '../component/AppFooter';
 import SudokuGrid from '../component/SudokuGrid';
@@ -34,6 +31,7 @@ export default class Main extends Component {
         this.newGame = this.newGame.bind(this);
         this.createGame = this.createGame.bind(this);
         this.saveGame = this.saveGame.bind(this);
+        this.updateCel = this.updateCel.bind(this);
     }
 
     solveClick(){
@@ -80,6 +78,11 @@ export default class Main extends Component {
         });
     }
 
+    updateCel(value, index){
+        var sudokuPrint = this.state.sudokuPrint;
+        sudokuPrint[index] = value;
+        this.setState({sudokuPrint});
+    }
     saveGame(){
         this.setState({
             editMode: false
@@ -109,11 +112,17 @@ export default class Main extends Component {
                     }
                 >
 
-                    <AppHeader openMenu={this.openMenu}/>
-                    <SudokuGrid sudoku={this.state.sudokuPrint} />
-                    <AppFooter solveClick={this.solveClick} 
-                        saveGame={this.saveGame}
-                        editMode={this.state.editMode}/>
+                <ScrollView keyboardShouldPersistTaps="always">
+                    <KeyboardAvoidingView behavior="padding" enabled>
+                        <AppHeader openMenu={this.openMenu}/>
+                        <SudokuGrid sudoku={this.state.sudokuPrint} 
+                            editMode={this.state.editMode}
+                            updateCel={this.updateCel}/>
+                        <AppFooter solveClick={this.solveClick} 
+                            saveGame={this.saveGame}
+                            editMode={this.state.editMode}/>
+                    </KeyboardAvoidingView>
+                </ScrollView>
 
                 </Drawer>
             </View>
