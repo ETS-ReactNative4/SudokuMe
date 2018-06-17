@@ -91,8 +91,15 @@ export default class Main extends Component {
             <View style={Styles.mainContainer}>
 
                 <Drawer
-                    tapToClose={true}
                     open={this.state.menuOpen}
+                    openDrawerOffset={150}
+                    captureGestures={"closed"}
+                    side="right"
+                    tapToClose={true}
+                    type="overlay"
+                    tweenHandler={(ratio) => ({
+                        main: { opacity:(2-ratio)/2 }
+                      })}
                     content={ 
                         <Menu closeMenu={this.closeMenu} 
                             restart={this.restart}
@@ -100,12 +107,6 @@ export default class Main extends Component {
                             createGame={this.createGame} 
                         /> 
                     }
-                    type="overlay"
-                    openDrawerOffset={150}
-                    tweenHandler={(ratio) => ({
-                        main: { opacity:(2-ratio)/2 }
-                      })}
-                    side="right"
                 >
 
                     <AppHeader openMenu={this.openMenu}/>
