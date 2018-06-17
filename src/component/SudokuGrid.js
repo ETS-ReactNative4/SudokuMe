@@ -22,10 +22,14 @@ export default class SudokuGrid extends Component {
 function renderItem(item) {
 
     if(item.value){
+
+        var celStyle = item.isFix ? Styles.fixValue : Styles.newValue;
+
         return (
+
             <View style={Styles.item}>
                 <View style={Styles.content}>
-                    <Text style={Styles.text}>{item.value}</Text>
+                    <Text style={celStyle}>{item.value}</Text>
                 </View>
             </View>
         );
@@ -34,7 +38,7 @@ function renderItem(item) {
         return (
             <View style={Styles.item}>
                 <View style={Styles.content}>
-                    <Text style={Styles.text}>{item}</Text>
+                    <Text style={Styles.fixValue}>{item}</Text>
                 </View>
             </View>
         );

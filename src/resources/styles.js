@@ -1,14 +1,18 @@
 import { Dimensions, Platform, StyleSheet } from 'react-native';
 
+var mainColor =  "#7FBC3C";
+var secondColor = "#FAB414";
+var thirdColor = "#E2E2E2";
+
 
 module.exports = {
 
     header:{
-        color: "#7fbc3c",
+        color: mainColor,
     },
 
     button: {
-        color: "#FAB414",
+        color: secondColor,
         fontSize: 25,
     },
 
@@ -19,7 +23,6 @@ module.exports = {
 
 
     menuContainer: {
-        backgroundColor: "gray",
         height: Dimensions.get('window').height,
     },
 
@@ -30,17 +33,19 @@ module.exports = {
 	},
 	content: {
 		flex: 1,
-		backgroundColor: "#E2E2E2",
+		backgroundColor: thirdColor,
 		alignItems: "center",
 		justifyContent: "center"
 	},
-	text: {
-        // color: "white",
+	fixValue: {
+        fontSize: 26,
+    },
+    newValue: {
+        color: mainColor,
         fontSize: 26,
     },
     
     mainView:{
         height: Dimensions.get('window').width,
-        // justifyContent: "center"
     }
 };
