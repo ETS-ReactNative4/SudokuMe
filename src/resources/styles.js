@@ -12,14 +12,18 @@ module.exports = {
     },
 
     headerOuterContainer:{
-        paddingTop: 70,
-        paddingBottom: 20,
-        height:100
+        justifyContent: "space-evenly",
+        height: 80,
+        paddingTop: 35
+    },
+
+    headerInnerContainer: {
+        alignItems: "center"
     },
 
     headerText:{
         color: "#FFF",
-        marginRight: -50
+        marginRight: -40
     },
 
     headerIcon:{
@@ -29,8 +33,7 @@ module.exports = {
     },
 
     headerIconContainer:{
-        padding: 20,
-        marginBottom: -10
+        padding: 15
     },
 
     buttonSolve: {

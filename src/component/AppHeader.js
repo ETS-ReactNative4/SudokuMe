@@ -8,9 +8,10 @@ export default class AppHeader extends Component {
     render(){
 
         return(
-            <Header 
+            <Header
                 backgroundColor={Styles.header.color}
                 outerContainerStyles={Styles.headerOuterContainer}
+                innerContainerStyles={Styles.headerInnerContainer}
                 centerComponent={
                     <Text h3 style={Styles.headerText}>Sudoku</Text>
                 }
