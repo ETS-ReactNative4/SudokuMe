@@ -12,7 +12,8 @@ export default class App extends React.Component {
   async componentWillMount() {
     try{
       await Expo.Font.loadAsync({
-          Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf")
+          Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf"),
+          MaterialIcons: require("@expo/vector-icons/fonts/MaterialIcons.ttf")
       });
 
       this.setState({ isReady: true });
