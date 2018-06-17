@@ -10,13 +10,17 @@ export default class AppHeader extends Component {
         return(
             <Header 
                 backgroundColor={Styles.header.color}
+                outerContainerStyles={Styles.headerOuterContainer}
                 centerComponent={
-                    <Text h3 style={{color: "#FFF"}}>Sudoku</Text>
+                    <Text h3 style={Styles.headerText}>Sudoku</Text>
                 }
                 rightComponent={
                     <Icon
-                        name='g-translate'
-                        color='#FFF' 
+                        name='menu'
+                        color={Styles.headerIcon.color}
+                        underlayColor={Styles.headerIcon.underlayColor}
+                        containerStyle={Styles.headerIconContainer}
+                        size={Styles.headerIcon.size}
                         onPress={this.props.openMenu}
                     />
                 }

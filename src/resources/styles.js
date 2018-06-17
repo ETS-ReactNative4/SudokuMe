@@ -1,6 +1,6 @@
 import { Dimensions, Platform, StyleSheet } from 'react-native';
 
-var mainColor =  "#7FBC3C";
+var mainColor =  "#267600";
 var secondColor = "#FAB414";
 var thirdColor = "#E2E2E2";
 
@@ -8,7 +8,29 @@ var thirdColor = "#E2E2E2";
 module.exports = {
 
     header:{
-        color: mainColor,
+        color: mainColor
+    },
+
+    headerOuterContainer:{
+        paddingTop: 70,
+        paddingBottom: 20,
+        height:100
+    },
+
+    headerText:{
+        color: "#FFF",
+        marginRight: -50
+    },
+
+    headerIcon:{
+        size: 35,
+        color: "#FFF",
+        underlayColor: "#458c40"
+    },
+
+    headerIconContainer:{
+        padding: 20,
+        marginBottom: -10
     },
 
     button: {
