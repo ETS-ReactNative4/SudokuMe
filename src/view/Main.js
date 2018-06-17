@@ -6,7 +6,7 @@ import AppFooter from '../component/AppFooter';
 import SudokuGrid from '../component/SudokuGrid';
 import Menu from '../component/Menu'
 
-import { SolveSudoku, MatrixToArray } from '../source/functions';
+import { SolveSudoku, MatrixToArray, ArrayToMatrix } from '../source/functions';
 
 var Styles = require('../resources/styles');
 var Games = require('../resources/games');
@@ -79,13 +79,16 @@ export default class Main extends Component {
     }
 
     updateCel(value, index){
-        var sudokuPrint = this.state.sudokuPrint;
-        sudokuPrint[index] = value;
-        this.setState({sudokuPrint});
+        if(value >= 1 && value <= 9){
+            var sudokuPrint = this.state.sudokuPrint;
+            sudokuPrint[index] = value;
+            this.setState({sudokuPrint});
+        }
     }
     saveGame(){
         this.setState({
-            editMode: false
+            editMode: false,
+            game: ArrayToMatrix(this.state.sudokuPrint)
         });
     }
 

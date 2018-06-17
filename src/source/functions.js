@@ -1,6 +1,4 @@
 export function MatrixToArray(matrix){
-
-    console.log("matrixtoarray");
     var array = [];
 
     for(var row = 0; row < matrix.length; row++){
@@ -10,6 +8,21 @@ export function MatrixToArray(matrix){
     }
 
     return array;
+}
+
+export function ArrayToMatrix(array){
+
+    var matrix = [];
+    var subArray = [];
+
+    for(var i = 0; i < array.length; i++){
+        subArray.push(array[i]);
+        if(subArray.length == 9){
+            matrix.push(subArray);
+            subArray = [];
+        }
+    }
+    return matrix;
 }
 
 export function SudokuToArray(sudoku){
