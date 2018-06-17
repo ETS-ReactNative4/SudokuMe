@@ -1,9 +1,8 @@
 import { Dimensions, Platform, StyleSheet } from 'react-native';
 
 var mainColor =  "#267600";
-var secondColor = "#FAB414";
+var secondColor = "#FFA726";
 var thirdColor = "#E2E2E2";
-
 
 module.exports = {
 
@@ -53,6 +52,14 @@ module.exports = {
 
     mainView:{
         height: Dimensions.get('window').width,
+    },
+
+    menuIcon: {
+        color: "#5F5F61"
+    },
+
+    menuIconStyle:{
+        padding: 5
     },
  
     menuContainer: {

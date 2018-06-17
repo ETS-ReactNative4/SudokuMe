@@ -7,17 +7,19 @@ var Styles = require('../resources/styles.js');
 export default class Menu extends Component {
 
     render(){
-
+ 
         return(
             <View style={Styles.menuContainer}>
                 <List> 
                     <ListItem
                         key={0}
-                        title="Menu"
+                        title="Back"
                         leftIcon={
                             <Icon
-                                name='arrow-forward'
-                                color='blue' 
+                                name='ios-arrow-back'
+                                type='ionicon'
+                                color={Styles.menuIcon.color} 
+                                iconStyle={Styles.menuIconStyle}
                             />
                         }
                         onPress={this.props.closeMenu}
@@ -29,23 +31,21 @@ export default class Menu extends Component {
                         title="Restart"
                         leftIcon={
                             <Icon
-                                name='arrow-forward'
-                                color='blue' 
+                                name='ios-refresh'
+                                type='ionicon'
+                                color={Styles.menuIcon.color} 
+                                iconStyle={Styles.menuIconStyle}
                             />
                         }
                         onPress={this.props.restart}
                         hideChevron={true}
                     />
 
+                    <Divider style={{ backgroundColor: 'black' }} />
+
                     <ListItem
                         key={2}
                         title="Easy"
-                        leftIcon={
-                            <Icon
-                                name='arrow-forward'
-                                color='blue' 
-                            />
-                        }
                         onPress={()=>this.props.newGame("easy")}
                         hideChevron={true}
                     />
@@ -53,12 +53,6 @@ export default class Menu extends Component {
                     <ListItem
                         key={3}
                         title="Medium"
-                        leftIcon={
-                            <Icon
-                                name='arrow-forward'
-                                color='blue' 
-                            />
-                        }
                         onPress={()=>this.props.newGame("medium")}
                         hideChevron={true}
                     />
@@ -66,12 +60,6 @@ export default class Menu extends Component {
                     <ListItem
                         key={4}
                         title="Hard"
-                        leftIcon={
-                            <Icon
-                                name='arrow-forward'
-                                color='blue' 
-                            />
-                        }
                         onPress={()=>this.props.newGame("hard")}
                         hideChevron={true}
                     />
@@ -83,8 +71,10 @@ export default class Menu extends Component {
                         title="Create Game"
                         leftIcon={
                             <Icon
-                                name='arrow-forward'
-                                color='blue' 
+                                name='ios-add'
+                                type='ionicon'
+                                color={Styles.menuIcon.color}
+                                iconStyle={Styles.menuIconStyle}
                             />
                         }
                         onPress={this.props.createGame}

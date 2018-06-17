@@ -91,6 +91,7 @@ export default class Main extends Component {
             <View style={Styles.mainContainer}>
 
                 <Drawer
+                    tapToClose={true}
                     open={this.state.menuOpen}
                     content={ 
                         <Menu closeMenu={this.closeMenu} 
@@ -101,6 +102,9 @@ export default class Main extends Component {
                     }
                     type="overlay"
                     openDrawerOffset={150}
+                    tweenHandler={(ratio) => ({
+                        main: { opacity:(2-ratio)/2 }
+                      })}
                     side="right"
                 >
 

@@ -9,6 +9,7 @@ export default class AppFooter extends Component {
         if(this.props.editMode){
             return(
                 <Button large
+                    raised
                     onPress={this.props.saveGame}
                     title="Save"
                     backgroundColor={Styles.buttonSave.color}
@@ -19,6 +20,7 @@ export default class AppFooter extends Component {
         else{
             return(
                     <Button large
+                        raised
                         onPress={this.props.solveClick}
                         title="Sudoku Me!"
                         backgroundColor={Styles.buttonSolve.color}
