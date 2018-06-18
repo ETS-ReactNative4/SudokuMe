@@ -18,8 +18,8 @@ export default class SudokuGrid extends Component {
             celStyle = Styles.newValue;
         }
         return (
-            <View style={Styles.item}>
-                <View style={Styles.content}>
+            <View style={Styles.gridItem}>
+                <View style={Styles.itemContent}>
                     <TextInput style={celStyle} value={`${value}`}
                         editable={this.props.editMode}
                         underlineColorAndroid='transparent'
@@ -35,9 +35,9 @@ export default class SudokuGrid extends Component {
 
     render(){
         return(
-                <View style={Styles.mainView}>  
-                   <SquareGrid rows={9} columns={9} items={this.props.sudoku} renderItem={this.genericRender} />
-                </View>
+            <View style={Styles.gridContainer}>
+                <SquareGrid rows={9} columns={9} items={this.props.sudoku} renderItem={this.genericRender} />
+            </View>
         );
     }
 

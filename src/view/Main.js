@@ -115,18 +115,19 @@ export default class Main extends Component {
                     }
                 >
 
-                <ScrollView keyboardShouldPersistTaps="always">
-                    <KeyboardAvoidingView behavior="padding" enabled>
-                        <AppHeader openMenu={this.openMenu}/>
-                        <SudokuGrid sudoku={this.state.sudokuPrint} 
-                            editMode={this.state.editMode}
-                            updateCel={this.updateCel}/>
-                        <AppFooter solveClick={this.solveClick} 
-                            saveGame={this.saveGame}
-                            editMode={this.state.editMode}/>
-                    </KeyboardAvoidingView>
-                </ScrollView>
+                    <ScrollView keyboardShouldPersistTaps="always">
+                        <KeyboardAvoidingView behavior="padding" enabled>
+                            <AppHeader openMenu={this.openMenu}/>
+                            <SudokuGrid sudoku={this.state.sudokuPrint} 
+                                editMode={this.state.editMode}
+                                updateCel={this.updateCel}/>
+                            
+                        </KeyboardAvoidingView>
+                    </ScrollView>
 
+                    <AppFooter solveClick={this.solveClick} 
+                                saveGame={this.saveGame}
+                                editMode={this.state.editMode}/>
                 </Drawer>
             </View>
         )

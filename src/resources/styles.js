@@ -50,10 +50,6 @@ module.exports = {
         width: Dimensions.get('window').width,
     },
 
-    mainView:{
-        height: Dimensions.get('window').width,
-    },
-
     menuIcon: {
         color: "#5F5F61"
     },
@@ -63,26 +59,39 @@ module.exports = {
     },
  
     menuContainer: {
+        flex: 1,
         height: Dimensions.get('window').height,
         backgroundColor: thirdColor,
     },
 
-    //Grid
-	item: {
+    gridContainer: {
+        height: Dimensions.get('window').width - 5,
+        marginTop: 35,
+        margin: 5,
+        paddingLeft: 4,
+        paddingTop: 5,
+    },
+
+	gridItem: {
         flex: 1,
-        padding: 1
+        padding: 1,
 	},
-	content: {
+	itemContent: {
 		flex: 1,
 		backgroundColor: thirdColor,
 		alignItems: "center",
 		justifyContent: "center"
-	},
+    },
+    
 	fixValue: {
         fontSize: 26,
     },
     newValue: {
         color: mainColor,
         fontSize: 26,
+    },
+
+    footer: {
+        paddingBottom: 10
     }
 }
