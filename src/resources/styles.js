@@ -1,8 +1,10 @@
 import { Dimensions, Platform, StyleSheet } from 'react-native';
 
-var mainColor =  "#267600";
-var secondColor = "#FFA726";
-var thirdColor = "#E2E2E2";
+var mainColor =  "#087E8B";
+var secondColor = "#F19F4D";
+var thirdColor = "#DFDFDF";
+var fourthColor = "#F45C4E";
+var gridColor = "#3C3C3C";
 
 module.exports = {
 
@@ -41,7 +43,7 @@ module.exports = {
     },
 
     buttonSave: {
-        color: "red",
+        color: fourthColor,
         fontSize: 25,
     },
  
