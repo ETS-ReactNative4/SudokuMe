@@ -1,5 +1,13 @@
 This project was developed using React-Native
 
+## How to Run
+* If you just want to run the app you can download the Expo client and scan the QR code in the following link:
+```
+https://expo.io/@diegocesa/sudokume
+```
+* I'm also provinding the APK under /android
+
+
 ## How to Build
 * Install Node.js
 ```
