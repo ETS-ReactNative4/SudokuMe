@@ -1,10 +1,19 @@
 {
   "expo": {
     "sdkVersion": "27.0.0",
+    "name": "SudokuMe",
+    "description": "A sudoku solver app",
     "splash": {
       "image": "./src/resources/splash_blue.png",
       "resizeMode": "cover"
     },
     "icon": "./src/resources/icon_blue.png"
+    "orientation": "portrait",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.diegodemeira.sudokume"
+    }
   }
 }
