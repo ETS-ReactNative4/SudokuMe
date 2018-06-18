@@ -30,7 +30,7 @@ module.exports = {
     headerIcon:{
         size: 35,
         color: "#FFF",
-        underlayColor: "#458c40"
+        underlayColor: "#8EC4CA"
     },
 
     headerIconContainer:{
