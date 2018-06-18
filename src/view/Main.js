@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { View, Text, ScrollView, KeyboardAvoidingView, Alert } from 'react-native';
 import Drawer from 'react-native-drawer';
 import AppHeader from '../component/AppHeader';
 import AppFooter from '../component/AppFooter';
@@ -10,7 +10,7 @@ import { SolveSudoku, MatrixToArray, ArrayToMatrix } from '../source/functions';
 
 var Styles = require('../resources/styles');
 var Games = require('../resources/games');
-
+var Constants = require('../source/constants');
 
 
 export default class Main extends Component {
@@ -22,6 +22,7 @@ export default class Main extends Component {
             sudokuPrint: MatrixToArray(Games.medium[0]),
             menuOpen: false,
             editMode: false,
+            buttonState: Constants.BUTTON_SOLVE,
         }
 
         this.solveClick = this.solveClick.bind(this);
@@ -35,12 +36,20 @@ export default class Main extends Component {
     }
 
     solveClick(){
+        // this.setState({buttonState: Constants.BUTTON_SOLVING})
         var result = SolveSudoku(this.state.game);
         if(result != false){
-            this.setState({sudokuPrint: result});
+            this.setState({
+                sudokuPrint: result,
+                buttonState: Constants.BUTTON_RESTART
+            });
         }
         else{
-            console.log("I need to learn more Sudoku ^_^'");
+            Alert.alert(
+                'Oops',
+                'I can not solve this puzzle',
+                [{text: 'Ok'}]
+              )
         }
     }
 
@@ -55,7 +64,8 @@ export default class Main extends Component {
     restart(){
         this.setState({
             sudokuPrint: MatrixToArray(this.state.game),
-            menuOpen: false
+            menuOpen: false,
+            buttonState: Constants.BUTTON_SOLVE
         });
     }
 
@@ -79,7 +89,7 @@ export default class Main extends Component {
     }
 
     updateCel(value, index){
-        if(value >= 1 && value <= 9){
+        if(value=="" || (value >= 1 && value <= 9)){
             var sudokuPrint = this.state.sudokuPrint;
             sudokuPrint[index] = value;
             this.setState({sudokuPrint});
@@ -127,7 +137,9 @@ export default class Main extends Component {
 
                     <AppFooter solveClick={this.solveClick} 
                                 saveGame={this.saveGame}
-                                editMode={this.state.editMode}/>
+                                editMode={this.state.editMode}
+                                buttonState={this.state.buttonState}
+                                restart={this.restart}/>
                 </Drawer>
             </View>
         )

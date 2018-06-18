@@ -26,21 +26,6 @@ export default class Menu extends Component {
                         hideChevron={true}
                     />
 
-                    <ListItem
-                        key={1}
-                        title="Restart"
-                        leftIcon={
-                            <Icon
-                                name='ios-refresh'
-                                type='ionicon'
-                                color={Styles.menuIcon.color} 
-                                iconStyle={Styles.menuIconStyle}
-                            />
-                        }
-                        onPress={this.props.restart}
-                        hideChevron={true}
-                    />
-
                     <Divider style={{ backgroundColor: 'black' }} />
 
                     <ListItem
@@ -88,3 +73,18 @@ export default class Menu extends Component {
     }
 
 }
+
+{/* <ListItem
+key={1}
+title="Restart"
+leftIcon={
+    <Icon
+        name='ios-refresh'
+        type='ionicon'
+        color={Styles.menuIcon.color} 
+        iconStyle={Styles.menuIconStyle}
+    />
+}
+onPress={this.props.restart}
+hideChevron={true}
+/> */}

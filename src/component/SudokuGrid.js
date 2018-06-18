@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, TextInput, Text } from 'react-native';
 import SquareGrid from 'react-native-square-grid';
 
-var Styles = require('../resources/styles.js');
+var Styles = require('../resources/styles');
 
 export default class SudokuGrid extends Component {
     constructor(props){

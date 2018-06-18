@@ -37,9 +37,20 @@ module.exports = {
         padding: 15
     },
 
+    button: {
+        fontSize: 25,
+    },
+
     buttonSolve: {
         color: secondColor,
-        fontSize: 25,
+    },
+
+    buttonSolving: {
+        color: thirdColor,
+    },
+
+    buttonRestart: {
+        color: fourthColor,
     },
 
     buttonSave: {
