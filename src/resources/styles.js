@@ -24,6 +24,7 @@ module.exports = {
 
     headerText:{
         color: "#FFF",
+        fontFamily: "sans-serif-thin",
         marginRight: -40
     },
 
@@ -43,6 +44,8 @@ module.exports = {
 
     buttonSolve: {
         color: secondColor,
+        fontFamily: "sans-serif-thin",
+        fontSize: 25,
     },
 
     buttonSolving: {
@@ -55,6 +58,7 @@ module.exports = {
 
     buttonSave: {
         color: fourthColor,
+        fontFamily: "sans-serif-thin",
         fontSize: 25,
     },
  
@@ -75,6 +79,12 @@ module.exports = {
         flex: 1,
         height: Dimensions.get('window').height,
         backgroundColor: thirdColor,
+    },
+
+    menuText: {
+        fontFamily: "sans-serif-thin",
+        fontWeight: "bold",
+        fontSize: 20
     },
 
     gridContainer: {
@@ -105,6 +115,6 @@ module.exports = {
     },
 
     footer: {
-        paddingBottom: 10
+        paddingBottom: 20
     }
 }

@@ -14,6 +14,7 @@ export default class Menu extends Component {
                     <ListItem
                         key={0}
                         title="Back"
+                        titleStyle={Styles.menuText}
                         leftIcon={
                             <Icon
                                 name='ios-arrow-back'
@@ -31,6 +32,7 @@ export default class Menu extends Component {
                     <ListItem
                         key={2}
                         title="Easy"
+                        titleStyle={Styles.menuText}
                         onPress={()=>this.props.newGame("easy")}
                         hideChevron={true}
                     />
@@ -38,6 +40,7 @@ export default class Menu extends Component {
                     <ListItem
                         key={3}
                         title="Medium"
+                        titleStyle={Styles.menuText}
                         onPress={()=>this.props.newGame("medium")}
                         hideChevron={true}
                     />
@@ -45,6 +48,7 @@ export default class Menu extends Component {
                     <ListItem
                         key={4}
                         title="Hard"
+                        titleStyle={Styles.menuText}
                         onPress={()=>this.props.newGame("hard")}
                         hideChevron={true}
                     />
@@ -54,6 +58,7 @@ export default class Menu extends Component {
                     <ListItem
                         key={5}
                         title="Create Game"
+                        titleStyle={Styles.menuText}
                         leftIcon={
                             <Icon
                                 name='ios-add'

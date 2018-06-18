@@ -13,7 +13,7 @@ export default class AppHeader extends Component {
                 outerContainerStyles={Styles.headerOuterContainer}
                 innerContainerStyles={Styles.headerInnerContainer}
                 centerComponent={
-                    <Text h3 style={Styles.headerText}>Sudoku</Text>
+                    <Text h3 style={Styles.headerText}>SUDOKU</Text>
                 }
                 rightComponent={
                     <Icon
