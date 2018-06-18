@@ -1,3 +1,5 @@
+var Constants = require('./constants');
+
 export function MatrixToArray(matrix){
     var array = [];
 
@@ -64,7 +66,7 @@ export function SolveSudoku(sudoku){
     for(var row = 0; row < solution.length; row++){
         for(var col = 0; col < solution[row].length; col++){
 
-            if(loopCounter < 9990000) loopCounter++; 
+            if(loopCounter < Constants.LOOP_LIMIT) loopCounter++; 
             else return false;
 
             if(solution[row][col].isFix == true){

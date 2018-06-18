@@ -35,20 +35,6 @@ export default class AppFooter extends Component {
                     </View>
                 );
             }
-            else if(this.props.buttonState == Constants.BUTTON_SOLVING){
-                return(
-                    <View style={Styles.footer}>
-                        <Button large
-                            raised
-                            onPress={()=>console.log("still solving")}
-                            title="Solving..."
-                            backgroundColor={Styles.buttonSolving.color}
-                            fontSize={Styles.button.fontSize}
-                            disabled={true}
-                        />
-                    </View>
-                );
-            }
             else{
                 return(
                     <View style={Styles.footer}>

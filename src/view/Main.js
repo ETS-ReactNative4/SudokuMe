@@ -36,7 +36,6 @@ export default class Main extends Component {
     }
 
     solveClick(){
-        // this.setState({buttonState: Constants.BUTTON_SOLVING})
         var result = SolveSudoku(this.state.game);
         if(result != false){
             this.setState({
@@ -48,7 +47,7 @@ export default class Main extends Component {
             Alert.alert(
                 'Oops',
                 'I can not solve this puzzle',
-                [{text: 'Ok'}]
+                [{text: 'Ok', onPress: () => this.setState({buttonState: Constants.BUTTON_SOLVE})}]
               )
         }
     }
@@ -77,6 +76,7 @@ export default class Main extends Component {
             sudokuPrint: MatrixToArray(game),
             menuOpen: false,
             editMode: false,
+            buttonState: Constants.BUTTON_SOLVE
         })
     }
 
@@ -84,7 +84,8 @@ export default class Main extends Component {
         this.setState({
             sudokuPrint: MatrixToArray(Games.clear),
             editMode: true,
-            menuOpen: false
+            menuOpen: false,
+            buttonState: Constants.BUTTON_SOLVE
         });
     }
 
