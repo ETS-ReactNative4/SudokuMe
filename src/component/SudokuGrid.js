@@ -17,8 +17,22 @@ export default class SudokuGrid extends Component {
         if(item.value && item.isFix == false){
             celStyle = Styles.newValue;
         }
+
+        var borderRight = null;
+        var borderBottom = null;
+
+        if((index+1) % 3 == 0 && (index+1) % 9 != 0)
+        {
+            borderRight = Styles.gridItemRighBorder;
+        }
+
+        if((index >= 18 && index < 27) || (index >= 45 && index <54))
+        {
+            borderBottom = Styles.gridItemBottomBorder;
+        }
+
         return (
-            <View style={Styles.gridItem}>
+            <View style={[Styles.gridItem, borderRight, borderBottom]}>
                 <View style={Styles.itemContent}>
                     <TextInput style={celStyle} value={`${value}`}
                         editable={this.props.editMode}

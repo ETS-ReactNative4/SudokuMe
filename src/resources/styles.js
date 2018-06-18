@@ -4,7 +4,7 @@ var mainColor =  "#087E8B";
 var secondColor = "#F19F4D";
 var thirdColor = "#DFDFDF";
 var fourthColor = "#F45C4E";
-var gridColor = "#3C3C3C";
+var borderColor = "#3C3C3C";
 
 module.exports = {
 
@@ -97,8 +97,19 @@ module.exports = {
 
 	gridItem: {
         flex: 1,
-        padding: 1,
-	},
+        padding: 1
+    },
+
+    gridItemRighBorder: {
+        borderRightWidth: 2,
+        borderRightColor: borderColor
+    },
+
+    gridItemBottomBorder: {
+        borderBottomWidth: 2,
+        borderBottomColor: borderColor
+    },
+    
 	itemContent: {
 		flex: 1,
 		backgroundColor: thirdColor,
