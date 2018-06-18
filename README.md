@@ -18,7 +18,7 @@ https://nodejs.org/en/download/
 * Navigate to the directory
 * Install modules:
     - `npm install`
-* Install Expo app on your phone. You can also use a simulator if you want.
+* Install Expo app on your phone. You can also use a simulator.
 
 Google Play:
 ```
