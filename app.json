@@ -4,6 +4,7 @@
     "splash": {
       "image": "./src/resources/splash_blue.png",
       "resizeMode": "cover"
-    }
+    },
+    "icon": "./src/resources/icon_blue.png"
   }
 }
