@@ -117,6 +117,20 @@ export function SolveSudoku(sudoku){
 
 }
 
+export function ValidateCreatedGame(gameArray){
+    var newGameMatrix = PrepareSudoku(ArrayToMatrix(gameArray));
+
+    console.log(newGameMatrix);
+    for(var row = 0; row < newGameMatrix.length; row++){
+        for(var col = 0; col < newGameMatrix[row].length; col++){
+            if(newGameMatrix[row][col].value != "" && ValidationCheck(newGameMatrix, row, col) == false){
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 export function ValidationCheck(solution, celRow, celCol){
     var valueHolder = solution[celRow][celCol].value;
 
@@ -155,5 +169,3 @@ export function ValidationCheck(solution, celRow, celCol){
 
     return true;
 }
-
-

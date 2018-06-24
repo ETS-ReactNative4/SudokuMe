@@ -6,7 +6,7 @@ import AppFooter from '../component/AppFooter';
 import SudokuGrid from '../component/SudokuGrid';
 import Menu from '../component/Menu'
 
-import { SolveSudoku, MatrixToArray, ArrayToMatrix } from '../source/functions';
+import { SolveSudoku, MatrixToArray, ArrayToMatrix, ValidateCreatedGame } from '../source/functions';
 
 var Styles = require('../resources/styles');
 var Games = require('../resources/games');
@@ -97,10 +97,19 @@ export default class Main extends Component {
         }
     }
     saveGame(){
-        this.setState({
-            editMode: false,
-            game: ArrayToMatrix(this.state.sudokuPrint)
-        });
+        if(ValidateCreatedGame(this.state.sudokuPrint) == false){
+            Alert.alert(
+                'Oops',
+                'This game is invalid. Please check you numbers',
+                [{text: 'Ok', onPress: () => console.log("OK pressed")}]
+              )
+        }
+        else{
+            this.setState({
+                editMode: false,
+                game: ArrayToMatrix(this.state.sudokuPrint)
+            });
+        }
     }
 
     render() {
