@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Text } from 'react-native';
+import { View, TextInput } from 'react-native';
 import SquareGrid from 'react-native-square-grid';
 
 var Styles = require('../resources/styles');

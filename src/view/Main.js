@@ -3,8 +3,10 @@ import { View, Text, ScrollView, KeyboardAvoidingView, Alert } from 'react-nativ
 import Drawer from 'react-native-drawer';
 import AppHeader from '../component/AppHeader';
 import AppFooter from '../component/AppFooter';
-import SudokuGrid from '../component/SudokuGrid';
 import Menu from '../component/Menu'
+
+import SudokuGrid from '../component/SudokuGrid';
+import TableGrid from '../component/TableGrid';
 
 import { SolveSudoku, MatrixToArray, ArrayToMatrix, ValidateCreatedGame } from '../source/functions';
 
@@ -138,9 +140,10 @@ export default class Main extends Component {
                     <ScrollView keyboardShouldPersistTaps="always">
                         <KeyboardAvoidingView behavior="padding" enabled>
                             <AppHeader openMenu={this.openMenu}/>
-                            <SudokuGrid sudoku={this.state.sudokuPrint} 
-                                editMode={this.state.editMode}
-                                updateCel={this.updateCel}/>
+                           
+
+
+                            <TableGrid game={this.state.game} />
                             
                         </KeyboardAvoidingView>
                     </ScrollView>
@@ -155,3 +158,7 @@ export default class Main extends Component {
         )
     }
 }
+
+{/* <SudokuGrid sudoku={this.state.sudokuPrint} 
+editMode={this.state.editMode}
+updateCel={this.updateCel}/> */}
